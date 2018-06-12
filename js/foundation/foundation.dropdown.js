@@ -146,44 +146,21 @@
       } else {
         if (!Foundation.rtl && $(window).width() > this.outerWidth(dropdown) + target.offset().left && !this.data_options(target).align_right) {
           var left = position.left;
-          var marginLeft = 'none';
           if (dropdown.hasClass('right')) {
             dropdown.removeClass('right');
-          }
-          if (dropdown.hasClass('center')) {
-            dropdown.removeClass('center');
           }
         } else {
           if (!dropdown.hasClass('right')) {
             dropdown.addClass('right');
           }
-          if (dropdown.hasClass('center')) {
-            dropdown.removeClass('center');
-          }
           var left = position.left - (this.outerWidth(dropdown) - this.outerWidth(target));
-
-          // check for off left side of screen
-          if (left < 0) {
-            var left = target.offset().left + ($(target).outerWidth()/2);
-            var marginLeft = -(this.outerWidth(dropdown)/2);
-
-            if (!dropdown.hasClass('center')) {
-              dropdown.addClass('center');
-            }
-
-            if (dropdown.hasClass('right')) {
-              dropdown.removeClass('right');
-            }
-          }
         }
 
         dropdown.attr('style', '').css({
           position : 'absolute',
           top: position.top + this.outerHeight(target),
-          left: left,
-          'margin-left': marginLeft
+          left: left
         });
-
       }
 
       return dropdown;
