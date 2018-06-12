@@ -96,6 +96,15 @@ $f-dropdown-content-padding: em-calc(20) !default;
       left: auto;
       right: $f-dropdown-triangle-side-offset - 1;
     }
+
+    &.center:before {
+      left: 50%;
+      margin-left: -3px;
+    }
+    &.center:after {
+      left: 50%;
+      margin-left: -3px;
+    }
   }
 
   @if $max-width { max-width: $max-width; }
